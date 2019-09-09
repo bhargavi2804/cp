@@ -6,5 +6,5 @@ void main()
 	char *s="berry";
 	//char *ss="err";
 	
-	printf("%s",strstr(s,"y"));
+	printf("%s",strstr(s,"er"));
 }
