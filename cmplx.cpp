@@ -8,6 +8,7 @@ public:
 	Complex(int r=0,int i=0){real=r;imag=i;}
 //this will automatically call '+' 
 //between 2 complex objects	
+
 Complex operator +(Complex const &obj)
 {
 	Complex res;
@@ -17,6 +18,8 @@ Complex operator +(Complex const &obj)
 }
 void print(){cout<<real<<"+i"<<imag<<endl;}
 };
+
+
 
 int main()
 {
