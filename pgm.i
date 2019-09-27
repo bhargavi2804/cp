@@ -1,9 +1,9 @@
-# 1 "float.c"
+# 1 "str.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "float.c"
+# 1 "str.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -852,14 +852,14 @@ extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)
 extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
 # 942 "/usr/include/stdio.h" 3 4
 
-# 2 "float.c" 2
+# 2 "str.c" 2
 
-# 2 "float.c"
+# 2 "str.c"
 void main()
 {
- float f=0.1f;
- if(f==0.1f)
- printf("true");
- else
- printf("false");
+ char *name="bhargavi";
+ printf("%s\n",name);
+ char n[]="nsb";
+ printf("%s\n",n);
+ printf("%s",name+name[1]-name[4]);
 }

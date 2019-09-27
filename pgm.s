@@ -1,9 +1,9 @@
-	.file	"float.c"
+	.file	"str.c"
 	.section	.rodata
+.LC0:
+	.string	"bhargavi"
 .LC1:
-	.string	"true"
-.LC2:
-	.string	"false"
+	.string	"%s"
 	.text
 	.globl	main
 	.type	main, @function
@@ -20,30 +20,42 @@ main:
 	pushl	%ecx
 	.cfi_escape 0xf,0x3,0x75,0x7c,0x6
 	subl	$20, %esp
-	flds	.LC0
-	fstps	-12(%ebp)
-	flds	-12(%ebp)
-	flds	.LC0
-	fucomip	%st(1), %st
-	fstp	%st(0)
-	jp	.L2
-	flds	-12(%ebp)
-	flds	.LC0
-	fucomip	%st(1), %st
-	fstp	%st(0)
-	jne	.L2
+	movl	%gs:20, %eax
+	movl	%eax, -12(%ebp)
+	xorl	%eax, %eax
+	movl	$.LC0, -20(%ebp)
 	subl	$12, %esp
+	pushl	-20(%ebp)
+	call	puts
+	addl	$16, %esp
+	movl	$6452078, -16(%ebp)
+	subl	$12, %esp
+	leal	-16(%ebp), %eax
+	pushl	%eax
+	call	puts
+	addl	$16, %esp
+	movl	-20(%ebp), %eax
+	addl	$1, %eax
+	movzbl	(%eax), %eax
+	movsbl	%al, %edx
+	movl	-20(%ebp), %eax
+	addl	$4, %eax
+	movzbl	(%eax), %eax
+	movsbl	%al, %eax
+	subl	%eax, %edx
+	movl	-20(%ebp), %eax
+	addl	%edx, %eax
+	subl	$8, %esp
+	pushl	%eax
 	pushl	$.LC1
 	call	printf
 	addl	$16, %esp
-	jmp	.L6
-.L2:
-	subl	$12, %esp
-	pushl	$.LC2
-	call	printf
-	addl	$16, %esp
-.L6:
 	nop
+	movl	-12(%ebp), %eax
+	xorl	%gs:20, %eax
+	je	.L2
+	call	__stack_chk_fail
+.L2:
 	movl	-4(%ebp), %ecx
 	.cfi_def_cfa 1, 0
 	leave
@@ -54,9 +66,5 @@ main:
 	.cfi_endproc
 .LFE0:
 	.size	main, .-main
-	.section	.rodata
-	.align 4
-.LC0:
-	.long	1036831949
 	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609"
 	.section	.note.GNU-stack,"",@progbits
