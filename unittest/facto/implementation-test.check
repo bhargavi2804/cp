@@ -1,0 +1,8 @@
+#include "implementation.h"
+
+#test sum2test
+    
+    fail_unless(fact(4) == 24, "fact function borked");
+    fail_unless(fact(5) == 120, "fact function borked");
+    fail_unless(fact(3) == 5, "fact function borked");
+    fail_unless(fact(2) == 5, "fact function borked");

@@ -1,0 +1,12 @@
+gcc -Wall -o egsum2ints-test implementation.c implementation
+
+
+https://stackoverflow.com/questions/14176180/is-there-a-more-basic-tutorial-for-the-c-unit-testing-framework-check-test.c -lcheck -lsubunit -lrt -lpthread -lm
+
+
+https://stackoverflow.com/questions/65820/unit-testing-c-code
+
+https://github.com/Tuplanolla/cheat
+
+sample for cheat: https://raw.githubusercontent.com/Tuplanolla/cheat/1.0.4/example.c
+
