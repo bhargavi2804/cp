@@ -1,0 +1,297 @@
+//dart 
+
+void main() {
+var name = 'Voyager I';
+var year = 1977;
+var antennaDiameter = 3.7;
+var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var image = {
+  'tags': ['saturn'],
+  'url': '//path/to/saturn.jpg'
+};
+  
+ if (year >= 2001) {
+  print('21st century');
+} else if (year >= 1901) {
+  print('20th century');
+}
+
+for (var object in flybyObjects) {
+  print(object);
+}
+
+for (int month = 1; month <= 12; month++) {
+  print(month);
+}
+
+while (year < 2016) {
+  year += 1;
+}
+}
+
+
+
+2)
+void main() {
+  int score=23;
+  var count=23;
+  int hexvalue=0xEADEBEFE;
+  
+  double percentage=90;
+  var percent=80;
+  double exponents=1.42e5;
+  
+  String name="Berry";
+  var company="Google";
+  
+  //boolean
+  bool isValid=true;
+  bool isAlive=false;
+}
+
+
+3)
+void main(){
+  String name="Berry";
+
+  print("my name is $name");
+print("the number of char in String Berry is ${name.length}");
+
+int l=20;
+int b=10;
+
+print("the sum of $l and $b is ${l+b}");
+print("the area of rectangle with length $l and breadth $b is ${l*b}");
+
+}
+
+
+
+
+4)void main(){
+  var salary=15000;
+  
+  if(salary>20000){
+    print("you got promotion!");
+  } else{
+    print("you need to work hard");
+  }
+
+ //if else if ladder
+int marks=70;
+  if(marks>=90 && marks <100){
+    print("A+ grade");
+  }
+  else if(marks>=80 && marks <90){
+    print("A grade");
+  }
+  else if(marks>=70 && marks <80){
+    print("B grade");
+  }
+  else if(marks>=60 && marks <70){
+    print("C grade");
+  }
+  else if(marks>=50 && marks <40){
+    print("D grade");
+  }
+  else if(marks>=0 && marks <30){
+    print("failed");
+  }
+  
+  String grade='A';
+  switch(grade){
+    case 'A':
+      print("excellent");
+      break;
+   
+    case 'B':
+       print("good");
+      break;
+    case 'C':
+       print("good enough");
+      break;
+    case 'F':
+       print("fail");
+      break;
+ default:
+       print("nvalid");
+
+  }
+}
+
+
+5)void main()
+{
+  for(int i=1;i<=10;i++)
+    if(i%2==0)
+      print(i);
+  
+
+
+List planetlist=["mercury","venus","earth"];
+
+for(String planet in planetlist){
+  print(planet);
+}
+  
+  myOuterloop: for(int i=1;i<=3;i++){
+    innerloop: for(int j=1;j<=3;j++){
+      print("$i $j");
+  if(i==2 && j==2)
+    break myOuterloop;
+    }
+  }
+}
+
+6)void printCountries(String name1,[String name2,String name3]){
+  print("name 1 id $name1");
+    print("name 2 id $name2");
+    print("name 3 id $name3");
+}
+void main(){
+  printCountries("USA");
+}
+
+
+7)void findVolume(int length,{int breadth=2,int height=3}){  //optionalparameter
+    print("length is $length");
+    print("breadth is $breadth");
+    print("height is $height");
+  
+  print("volume is ${length*breadth*height}");
+}
+void main(){
+  findVolume(10);
+  //findVolume(10,breadth=1,height=7);
+  print("");
+}
+
+
+
+8)void main(){
+ /* print("case 1");
+  //case 1: when you know the exception to be thrown, use ON clausde
+  try{
+    int result=12~/0;
+    print("the result is $result");
+  
+  } on IntegerDivisionByZeroException{
+    print("cannot divide by 0");
+  }*/
+  
+  print("");print("case 2");
+  //case 2:when you dont know the exception , use CATCH clause
+  try{
+    int result=12~/0;
+    print("the result is $result");
+  }catch(e){
+    print("exception thrown is $e");
+  }
+  
+  print("");print("case 3");
+  try{
+     int result=12~/0;
+    print("the result is $result");
+    }catch(e,s){
+    print("exception thrown is $e");
+    print("STACK TRACE \n $s");
+  }
+  print("");print("case 4");
+  try{
+     int result=12~/0;
+    print("the result is $result");
+    }catch(e){
+    print("exception thrown is $e");
+  }finally{
+    print("this is FINALLY Clause n is always executed");
+  }
+}
+
+
+9)class Student{
+  int id=-1;
+  String name;
+  
+  Student(this.id,this.name); //parameterised constructor
+  
+  Student.myCustomConstructor(){
+    print("This is my custom constructor");
+  }
+  Student.myAnotherNamedConstructor(this.id,this.name);
+    
+ 
+  void study(){
+    print("${this.name}is now studying");
+  }
+  void sleep(){
+    print("${this.name}is now sleeping");
+  }
+}
+void main(){
+var student1=Student(2,"berry");
+  //student1.id=23;
+  //student1.name="berry";
+  print("${student1.id} and ${student1.name} ");
+  
+   student1.study();
+  student1.sleep();
+  
+var student3=Student.myCustomConstructor();
+student3.id=23;
+student3.name="vysh";
+  print("${student3.id} and ${student3.name} ");
+
+  var student4=Student.myAnotherNamedConstructor(3,"ranju");
+  print("${student4.id} and ${student4.name} ");
+}
+
+
+10)// Objectives
+// 1. Exploring Inheritance
+
+void main() {
+
+	var dog = Dog();
+	dog.breed = "Labrador";
+	dog.color = "Black";
+	dog.bark();
+	dog.eat();
+
+	var cat = Cat();
+	cat.color = "White";
+	cat.age = 6;
+	cat.eat();
+	cat.meow();
+
+	var animal = Animal();
+	animal.color = "brown";
+	animal.eat();
+}
+
+class Animal {
+
+	String color;
+
+	void eat() {
+		print("Eat !");
+	}
+}
+
+class Dog extends Animal {      // Dog is Child class or sub class, Animal is super or parent class
+
+	String breed;
+
+	void bark() {
+		print("Bark !");
+	}
+}
+
+class Cat extends Animal {      // Cat is Child class or sub class, Animal is super or parent class
+
+	int age;
+
+	void meow() {
+		print("Meow !");
+	}
+}
+
